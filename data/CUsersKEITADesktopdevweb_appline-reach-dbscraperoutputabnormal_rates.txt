@@ -1,0 +1,43 @@
+<string>:2: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+“o˜^—¦‚ª100%‚ğ’´‚¦‚é©¡‘Ì: 34Œ
+========================================================================================================================
+µƒ–h’¬                 ‹{éŒ§        —F‚¾‚¿:   17,971,200 lŒû:      1,110 “o˜^—¦: 1619027.03% URL: https://page.line.me/7kashu9
+”ªŒËs                  ÂXŒ§        —F‚¾‚¿:  159,712,023 lŒû:    210,178 “o˜^—¦:   75988.93% URL: https://page.line.me/hachinohecity
+”n˜H‘º                  ‚’mŒ§        —F‚¾‚¿:        4,773 lŒû:        649 “o˜^—¦:     735.44% URL: https://page.line.me/143lzoxa
+–L•x’¬                  –kŠC“¹        —F‚¾‚¿:       22,458 lŒû:      3,598 “o˜^—¦:     624.18% URL: https://page.line.me/town.toyotomi
+”ü‹½’¬                  “‡ªŒ§        —F‚¾‚¿:       17,745 lŒû:      3,799 “o˜^—¦:     467.10% URL: https://page.line.me/shimanemisato
+ŠCm’¬                  “‡ªŒ§        —F‚¾‚¿:        7,283 lŒû:      2,313 “o˜^—¦:     314.87% URL: https://page.line.me/amacho
+ìª–{’¬                 Ã‰ªŒ§        —F‚¾‚¿:       14,833 lŒû:      5,214 “o˜^—¦:     284.48% URL: https://page.line.me/town.kawanehon
+ˆÀŒ|‘¾“c’¬                L“‡Œ§        —F‚¾‚¿:       12,609 lŒû:      4,923 “o˜^—¦:     256.12% URL: https://page.line.me/akiota
+‰º–kR‘º                 “Ş—ÇŒ§        —F‚¾‚¿:        1,663 lŒû:        662 “o˜^—¦:     251.21% URL: https://page.line.me/shimokitayamamura
+¼‘O’¬                  –kŠC“¹        —F‚¾‚¿:       12,550 lŒû:      5,105 “o˜^—¦:     245.84% URL: https://page.line.me/matsumae-town
+‚¢‚¿‚«‹ø–Ø–ìs              ­™“‡Œ§       —F‚¾‚¿:       57,715 lŒû:     25,577 “o˜^—¦:     225.65% URL: https://page.line.me/line.ick_city
+“Ï‘O’¬                  –kŠC“¹        —F‚¾‚¿:        5,498 lŒû:      2,572 “o˜^—¦:     213.76% URL: https://page.line.me/tomamae_town
+”ÑŠÚ‘º                  •Ÿ“‡Œ§        —F‚¾‚¿:          858 lŒû:        407 “o˜^—¦:     210.81% URL: https://page.line.me/iitate_village
+‹…–‘º                  ŒF–{Œ§        —F‚¾‚¿:        2,801 lŒû:      1,589 “o˜^—¦:     176.27% URL: https://page.line.me/kumavillage
+’|•x’¬                  ‰«“êŒ§        —F‚¾‚¿:        6,434 lŒû:      3,828 “o˜^—¦:     168.08% URL: https://page.line.me/taketomicho
+“ì‹ãBs                 ­™“‡Œ§       —F‚¾‚¿:       49,433 lŒû:     29,650 “o˜^—¦:     166.72% URL: https://page.line.me/minamikyushu_city
+“ìíq’¬                 ­™“‡Œ§       —F‚¾‚¿:        8,139 lŒû:      4,974 “o˜^—¦:     163.63% URL: https://page.line.me/rocket_minamitane
+•ÊŠC’¬                  –kŠC“¹        —F‚¾‚¿:       21,758 lŒû:     13,344 “o˜^—¦:     163.05% URL: https://page.line.me/betsukai
+–kR‘º                  ˜a‰ÌRŒ§       —F‚¾‚¿:          565 lŒû:        347 “o˜^—¦:     162.82% URL: https://page.line.me/kwd8867y
+“‡“cs                  Ã‰ªŒ§        —F‚¾‚¿:      140,922 lŒû:     91,868 “o˜^—¦:     153.40% URL: https://page.line.me/shimadacity
+¬›‘º                  R—œŒ§        —F‚¾‚¿:          887 lŒû:        589 “o˜^—¦:     150.59% URL: https://page.line.me/vill-kosuge
+Ä’Ãs                  Ã‰ªŒ§        —F‚¾‚¿:      192,375 lŒû:    132,134 “o˜^—¦:     145.59% URL: https://page.line.me/yaizucity
+ˆ¾“‡‰Y‘º                 VŠƒŒ§        —F‚¾‚¿:          458 lŒû:        317 “o˜^—¦:     144.48% URL: https://page.line.me/awashima
+ìFs                  ÎìŒ§        —F‚¾‚¿:       13,111 lŒû:      9,812 “o˜^—¦:     133.62% URL: https://page.line.me/suzucity
+’m—§s                  ˆ¤’mŒ§        —F‚¾‚¿:       95,389 lŒû:     72,670 “o˜^—¦:     131.26% URL: https://page.line.me/chiryu_city
+’·‰ª‹s                 ‹“s•{        —F‚¾‚¿:      106,362 lŒû:     81,638 “o˜^—¦:     130.28% URL: https://page.line.me/nagaokakyocity
+•x—Ç–ìs                 –kŠC“¹        —F‚¾‚¿:       24,152 lŒû:     19,271 “o˜^—¦:     125.33% URL: https://page.line.me/furano-city
+‚İ‚æ‚µs                 ˆ¤’mŒ§        —F‚¾‚¿:       73,674 lŒû:     61,934 “o˜^—¦:     118.96% URL: https://page.line.me/miyoshi_city
+•Ÿ‰ªs                  •Ÿ‰ªŒ§        —F‚¾‚¿:    1,949,331 lŒû:  1,670,636 “o˜^—¦:     116.68% URL: https://page.line.me/fukuokacity
+Š ’Js                  ˆ¤’mŒ§        —F‚¾‚¿:      170,049 lŒû:    153,895 “o˜^—¦:     110.50% URL: https://page.line.me/kariyacity
+—^“ß‘’¬                 ‰«“êŒ§        —F‚¾‚¿:        1,801 lŒû:      1,635 “o˜^—¦:     110.15% URL: https://page.line.me/129-yona.nanta_ten
+‹»•”’¬                  –kŠC“¹        —F‚¾‚¿:        2,267 lŒû:      2,100 “o˜^—¦:     107.95% URL: https://page.line.me/okoppe
+—Ö“‡s                  ÎìŒ§        —F‚¾‚¿:       20,179 lŒû:     18,708 “o˜^—¦:     107.86% URL: https://page.line.me/wajimashi
+¼”ös                  ˆ¤’mŒ§        —F‚¾‚¿:      166,765 lŒû:    166,726 “o˜^—¦:     100.02% URL: https://page.line.me/nishiocity
