@@ -68,9 +68,13 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
   return null;
 };
 
+type ScaleType = 'linear' | 'log';
+
 export default function MunicipalityScatterChart({ data }: MunicipalityScatterChartProps) {
   const [xAxisKey, setXAxisKey] = useState<keyof Municipality>('population');
   const [yAxisKey, setYAxisKey] = useState<keyof Municipality>('registration_rate');
+  const [xAxisScale, setXAxisScale] = useState<ScaleType>('linear');
+  const [yAxisScale, setYAxisScale] = useState<ScaleType>('linear');
 
   const xAxisOption = axisOptions.find((opt) => opt.key === xAxisKey);
   const yAxisOption = axisOptions.find((opt) => opt.key === yAxisKey);
@@ -87,7 +91,9 @@ export default function MunicipalityScatterChart({ data }: MunicipalityScatterCh
       {/* 軸選択UI */}
       <div className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-2xl border border-gray-100">
         <h3 className="text-lg font-bold text-gray-800 mb-4">グラフ設定</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        {/* 軸の選択 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               X軸（横軸）
@@ -121,6 +127,64 @@ export default function MunicipalityScatterChart({ data }: MunicipalityScatterCh
             </select>
           </div>
         </div>
+
+        {/* スケール切り替え */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
+              X軸スケール
+            </label>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setXAxisScale('linear')}
+                className={`flex-1 px-4 py-2 rounded-lg font-medium transition-all ${
+                  xAxisScale === 'linear'
+                    ? 'bg-purple-600 text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                線形
+              </button>
+              <button
+                onClick={() => setXAxisScale('log')}
+                className={`flex-1 px-4 py-2 rounded-lg font-medium transition-all ${
+                  xAxisScale === 'log'
+                    ? 'bg-purple-600 text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                対数
+              </button>
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
+              Y軸スケール
+            </label>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setYAxisScale('linear')}
+                className={`flex-1 px-4 py-2 rounded-lg font-medium transition-all ${
+                  yAxisScale === 'linear'
+                    ? 'bg-purple-600 text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                線形
+              </button>
+              <button
+                onClick={() => setYAxisScale('log')}
+                className={`flex-1 px-4 py-2 rounded-lg font-medium transition-all ${
+                  yAxisScale === 'log'
+                    ? 'bg-purple-600 text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                対数
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 散布図 */}
@@ -143,11 +207,13 @@ export default function MunicipalityScatterChart({ data }: MunicipalityScatterCh
                 type="number"
                 dataKey="x"
                 name={xAxisOption?.label}
+                scale={xAxisScale}
+                domain={xAxisScale === 'log' ? ['auto', 'auto'] : undefined}
                 tickFormatter={(value) => xAxisOption?.formatter?.(value) || value.toString()}
                 stroke="#6b7280"
               >
                 <Label
-                  value={xAxisOption?.label}
+                  value={`${xAxisOption?.label} (${xAxisScale === 'log' ? '対数' : '線形'})`}
                   position="bottom"
                   offset={40}
                   style={{ fontSize: '14px', fontWeight: 'bold', fill: '#374151' }}
@@ -157,11 +223,13 @@ export default function MunicipalityScatterChart({ data }: MunicipalityScatterCh
                 type="number"
                 dataKey="y"
                 name={yAxisOption?.label}
+                scale={yAxisScale}
+                domain={yAxisScale === 'log' ? ['auto', 'auto'] : undefined}
                 tickFormatter={(value) => yAxisOption?.formatter?.(value) || value.toString()}
                 stroke="#6b7280"
               >
                 <Label
-                  value={yAxisOption?.label}
+                  value={`${yAxisOption?.label} (${yAxisScale === 'log' ? '対数' : '線形'})`}
                   angle={-90}
                   position="left"
                   offset={60}
