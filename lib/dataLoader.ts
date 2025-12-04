@@ -69,12 +69,15 @@ export async function loadMunicipalityData(fileName: string): Promise<Municipali
 function validateMunicipalityData(row: any): boolean {
   return (
     // municipality_codeは空でも許容（後で生成する）
+    // account_nameも空でも許容（後で自治体名を使用）
     row.municipality_name &&
+    row.municipality_name.trim() !== '' &&
     row.prefecture &&
-    row.account_name &&
     typeof row.friends_count === 'number' &&
     typeof row.population === 'number' &&
-    typeof row.registration_rate === 'number'
+    typeof row.registration_rate === 'number' &&
+    row.population_category &&
+    row.population_category.trim() !== ''
   );
 }
 
@@ -87,41 +90,23 @@ function mapToMunicipality(row: any, index: number): Municipality {
     ? String(row.municipality_code)
     : String(index + 1).padStart(6, '0');
 
-  // population_categoryのマッピング（簡略版から正式版へ）
-  const populationCategory = normalizePopulationCategory(row.population_category);
+  // account_nameが空の場合は、自治体名を使用
+  const accountName = row.account_name && String(row.account_name).trim()
+    ? String(row.account_name).trim()
+    : String(row.municipality_name).trim();
 
   return {
     municipality_code: municipalityCode,
-    municipality_name: String(row.municipality_name),
-    prefecture: String(row.prefecture),
-    account_name: String(row.account_name),
+    municipality_name: String(row.municipality_name).trim(),
+    prefecture: String(row.prefecture).trim(),
+    account_name: accountName,
     friends_count: Number(row.friends_count),
     population: Number(row.population),
     registration_rate: Number(row.registration_rate),
-    population_category: populationCategory,
-    updated_at: String(row.updated_at),
-    line_url: row.line_url ? String(row.line_url) : undefined
+    population_category: String(row.population_category).trim() as any,
+    updated_at: String(row.updated_at).trim(),
+    line_url: row.line_url ? String(row.line_url).trim() : undefined
   };
-}
-
-/**
- * population_categoryを正規化
- * CSVの簡略版（「市」「町村」）を正式版にマッピング
- */
-function normalizePopulationCategory(category: string): any {
-  // 既に正式版の場合はそのまま返す
-  if (['政令指定都市', '中核市', '一般市', '町村'].includes(category)) {
-    return category;
-  }
-
-  // 簡略版から正式版へのマッピング
-  const categoryMap: Record<string, string> = {
-    '市': '一般市',
-    '町村': '町村',
-    '特別区': '一般市'
-  };
-
-  return categoryMap[category] || '一般市';
 }
 
 /**

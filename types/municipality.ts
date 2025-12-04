@@ -1,5 +1,5 @@
 // 人口規模区分
-export type PopulationCategory = '政令指定都市' | '中核市' | '一般市' | '町村';
+export type PopulationCategory = '都道府県' | '市' | '町' | '村';
 
 // 地方ブロック
 export type RegionBlock =
@@ -70,10 +70,10 @@ export const REGION_MAPPING: Record<RegionBlock, readonly string[]> = {
 
 // 人口規模区分リスト
 export const POPULATION_CATEGORIES: PopulationCategory[] = [
-  '政令指定都市',
-  '中核市',
-  '一般市',
-  '町村',
+  '都道府県',
+  '市',
+  '町',
+  '村',
 ];
 
 // 地方ブロックリスト
