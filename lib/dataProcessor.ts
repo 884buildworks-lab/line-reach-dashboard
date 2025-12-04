@@ -43,6 +43,17 @@ export function filterMunicipalityData(
       }
     }
 
+    // 登録率範囲フィルター
+    if (filters.registrationRateRange) {
+      const { min, max } = filters.registrationRateRange;
+      if (min !== undefined && item.registration_rate < min) {
+        return false;
+      }
+      if (max !== undefined && item.registration_rate > max) {
+        return false;
+      }
+    }
+
     return true;
   });
 }

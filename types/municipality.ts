@@ -34,6 +34,10 @@ export interface FilterState {
     min?: number;
     max?: number;
   };
+  registrationRateRange?: {
+    min?: number;
+    max?: number;
+  };
 }
 
 // 統計値

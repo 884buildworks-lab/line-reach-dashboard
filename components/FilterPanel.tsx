@@ -53,6 +53,28 @@ export default function FilterPanel({ filters, onFilterChange }: FilterPanelProp
     });
   };
 
+  const handleRegistrationRateMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value === '' ? undefined : Number(e.target.value);
+    onFilterChange({
+      ...filters,
+      registrationRateRange: {
+        ...filters.registrationRateRange,
+        min: value
+      }
+    });
+  };
+
+  const handleRegistrationRateMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value === '' ? undefined : Number(e.target.value);
+    onFilterChange({
+      ...filters,
+      registrationRateRange: {
+        ...filters.registrationRateRange,
+        max: value
+      }
+    });
+  };
+
   const handleReset = () => {
     onFilterChange({});
   };
@@ -66,7 +88,7 @@ export default function FilterPanel({ filters, onFilterChange }: FilterPanelProp
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
         {/* 都道府県フィルター */}
         <div className="group">
           <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
@@ -160,6 +182,48 @@ export default function FilterPanel({ filters, onFilterChange }: FilterPanelProp
                 value={filters.populationRange?.max ?? ''}
                 onChange={handlePopulationMaxChange}
                 placeholder="例: 30000"
+                className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent hover:border-purple-300 transition-all"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* 登録率フィルター */}
+        <div className="group">
+          <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <FiTrendingUp className="text-purple-600" />
+            登録率 (%)
+          </label>
+          <div className="space-y-2">
+            <div>
+              <label htmlFor="rate-min" className="block text-xs text-gray-600 mb-1 ml-1">
+                下限
+              </label>
+              <input
+                id="rate-min"
+                type="number"
+                min="0"
+                max="100"
+                step="1"
+                value={filters.registrationRateRange?.min ?? ''}
+                onChange={handleRegistrationRateMinChange}
+                placeholder="例: 50"
+                className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent hover:border-purple-300 transition-all"
+              />
+            </div>
+            <div>
+              <label htmlFor="rate-max" className="block text-xs text-gray-600 mb-1 ml-1">
+                上限
+              </label>
+              <input
+                id="rate-max"
+                type="number"
+                min="0"
+                max="100"
+                step="1"
+                value={filters.registrationRateRange?.max ?? ''}
+                onChange={handleRegistrationRateMaxChange}
+                placeholder="例: 100"
                 className="w-full px-4 py-2 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent hover:border-purple-300 transition-all"
               />
             </div>
