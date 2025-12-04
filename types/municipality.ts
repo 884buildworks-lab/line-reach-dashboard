@@ -22,6 +22,7 @@ export interface Municipality {
   registration_rate: number;
   population_category: PopulationCategory;
   updated_at: string;
+  line_url?: string;
 }
 
 // フィルター状態
