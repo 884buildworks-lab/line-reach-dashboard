@@ -125,9 +125,7 @@ export function getAvailableDataFiles(): string[] {
   // クライアントサイド - ハードコードされたリスト
   // TODO: マニフェストファイルから動的に取得
   return [
-    '2024-11.csv',
-    '2024-12.csv',
-    '2025-01.csv'
+    '2025-12-03.csv'
   ];
 }
 
