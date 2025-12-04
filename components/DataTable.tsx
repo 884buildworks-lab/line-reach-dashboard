@@ -44,6 +44,9 @@ export default function DataTable({ data, excludedIds, onExcludedChange }: DataT
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gradient-to-r from-purple-600 to-blue-600">
             <tr>
+              <th className="px-4 py-4 text-center text-xs font-bold text-white uppercase tracking-wider">
+                No.
+              </th>
               <th className="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">
                 除外
               </th>
@@ -100,6 +103,9 @@ export default function DataTable({ data, excludedIds, onExcludedChange }: DataT
                     ${isExcluded ? 'opacity-40' : ''}
                   `}
                 >
+                  <td className="px-4 py-4 whitespace-nowrap text-center text-sm font-medium text-gray-500">
+                    {index + 1}
+                  </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <input
                       type="checkbox"
