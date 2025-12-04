@@ -1,6 +1,6 @@
 import { loadMunicipalityData, getLatestDataFile } from '@/lib/dataLoader';
 import { Municipality } from '@/types/municipality';
-import MunicipalityScatterChart from '@/components/MunicipalityScatterChart';
+import VisualizationDashboard from '@/components/VisualizationDashboard';
 import Link from 'next/link';
 import { FiHome, FiBarChart2 } from 'react-icons/fi';
 
@@ -48,9 +48,9 @@ export default async function VisualizationPage() {
           </div>
         </header>
 
-        {/* 散布図 */}
+        {/* 可視化ダッシュボード */}
         {data.length > 0 ? (
-          <MunicipalityScatterChart data={data} />
+          <VisualizationDashboard initialData={data} />
         ) : (
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-12 text-center border border-gray-100">
             <p className="text-gray-600 mb-4 text-lg">
